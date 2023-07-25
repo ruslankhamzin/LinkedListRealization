@@ -3,13 +3,8 @@ package com.example.linkedlistrealize;
 public class CustomLinkedList {
     private Node head;
 
-    public CustomLinkedList() {
-        this.head = null;
-    }
-
     public void put(int data) {
         Node newNode = new Node(data);
-
         if (head == null) {
             head = newNode;
         } else {
@@ -25,7 +20,6 @@ public class CustomLinkedList {
         if (head == null) {
             return false;
         }
-
         if (head.data == data) {
             head = head.next;
             return true;
@@ -39,14 +33,12 @@ public class CustomLinkedList {
             }
             currentNode = currentNode.next;
         }
-
         return false;
     }
 
     public int get(int index) {
         Node currentNode = head;
         int currentIndex = 0;
-
         while (currentNode != null) {
             if (currentIndex == index) {
                 return currentNode.data;
@@ -60,13 +52,11 @@ public class CustomLinkedList {
 
     public void reverse() {
         Node prevNode = null;
-        Node currentNode = head;
-
-        while (currentNode != null) {
-            Node nextNode = currentNode.next;
-            currentNode.next = prevNode;
-            prevNode = currentNode;
-            currentNode = nextNode;
+        while (head != null) {
+            Node nextNode = head.next;
+            head.next = prevNode;
+            prevNode = head;
+            head = nextNode;
         }
         head = prevNode;
     }
