@@ -52,10 +52,10 @@ class LinkedListRealizeApplicationTests {
         linkedList.put(3);
 
         linkedList.reverse();
-
         assertEquals(3, linkedList.get(0));
         assertEquals(2, linkedList.get(1));
         assertEquals(1, linkedList.get(2));
+        linkedList.display();
     }
 
 
